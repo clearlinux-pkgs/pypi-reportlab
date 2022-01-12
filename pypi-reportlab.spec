@@ -4,7 +4,7 @@
 #
 Name     : pypi-reportlab
 Version  : 3.6.5
-Release  : 81
+Release  : 82
 URL      : https://files.pythonhosted.org/packages/63/55/8814c5a5d281d5891cb105a712855298834b8b0472aff47f3dd872d60380/reportlab-3.6.5.tar.gz
 Source0  : https://files.pythonhosted.org/packages/63/55/8814c5a5d281d5891cb105a712855298834b8b0472aff47f3dd872d60380/reportlab-3.6.5.tar.gz
 Summary  : The Reportlab Toolkit
@@ -13,11 +13,7 @@ License  : BSD-3-Clause LGPL-2.0 OFL-1.0
 Requires: pypi-reportlab-license = %{version}-%{release}
 Requires: pypi-reportlab-python = %{version}-%{release}
 Requires: pypi-reportlab-python3 = %{version}-%{release}
-BuildRequires : Pillow
 BuildRequires : buildreq-distutils3
-Provides: reportlab
-Provides: reportlab-python
-Provides: reportlab-python3
 BuildRequires : pypi(pillow)
 BuildRequires : python3-dev
 
@@ -62,7 +58,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1641488506
+export SOURCE_DATE_EPOCH=1642007459
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
