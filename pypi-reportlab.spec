@@ -4,7 +4,7 @@
 #
 Name     : pypi-reportlab
 Version  : 3.6.12
-Release  : 92
+Release  : 93
 URL      : https://files.pythonhosted.org/packages/b8/ac/10d68a650b321bd8c4d8cbefd9994e7727d57b381c9bdb0a013273011e62/reportlab-3.6.12.tar.gz
 Source0  : https://files.pythonhosted.org/packages/b8/ac/10d68a650b321bd8c4d8cbefd9994e7727d57b381c9bdb0a013273011e62/reportlab-3.6.12.tar.gz
 Summary  : The Reportlab Toolkit
