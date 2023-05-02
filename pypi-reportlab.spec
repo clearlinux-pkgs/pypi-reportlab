@@ -5,14 +5,12 @@
 #
 Name     : pypi-reportlab
 Version  : 3.6.13
-Release  : 94
+Release  : 95
 URL      : https://files.pythonhosted.org/packages/65/82/45b443db5acaf7edb471be57335a22d9f3bb6e4e9c9133ffa926f8ecdf2a/reportlab-3.6.13.tar.gz
 Source0  : https://files.pythonhosted.org/packages/65/82/45b443db5acaf7edb471be57335a22d9f3bb6e4e9c9133ffa926f8ecdf2a/reportlab-3.6.13.tar.gz
 Summary  : The Reportlab Toolkit
 Group    : Development/Tools
 License  : BSD-3-Clause LGPL-2.0 OFL-1.0
-Requires: pypi-reportlab-filemap = %{version}-%{release}
-Requires: pypi-reportlab-lib = %{version}-%{release}
 Requires: pypi-reportlab-license = %{version}-%{release}
 Requires: pypi-reportlab-python = %{version}-%{release}
 Requires: pypi-reportlab-python3 = %{version}-%{release}
@@ -26,24 +24,6 @@ BuildRequires : pypi(pillow)
 %description
 This directory is the home of various ReportLab tools.
 They are packaged such that they can be used more easily.
-
-%package filemap
-Summary: filemap components for the pypi-reportlab package.
-Group: Default
-
-%description filemap
-filemap components for the pypi-reportlab package.
-
-
-%package lib
-Summary: lib components for the pypi-reportlab package.
-Group: Libraries
-Requires: pypi-reportlab-license = %{version}-%{release}
-Requires: pypi-reportlab-filemap = %{version}-%{release}
-
-%description lib
-lib components for the pypi-reportlab package.
-
 
 %package license
 Summary: license components for the pypi-reportlab package.
@@ -65,7 +45,6 @@ python components for the pypi-reportlab package.
 %package python3
 Summary: python3 components for the pypi-reportlab package.
 Group: Default
-Requires: pypi-reportlab-filemap = %{version}-%{release}
 Requires: python3-core
 Provides: pypi(reportlab)
 Requires: pypi(pillow)
@@ -86,15 +65,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1682608004
+export SOURCE_DATE_EPOCH=1683047616
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
@@ -132,14 +111,6 @@ popd
 %files
 %defattr(-,root,root,-)
 
-%files filemap
-%defattr(-,root,root,-)
-/usr/share/clear/filemap/filemap-pypi-reportlab
-
-%files lib
-%defattr(-,root,root,-)
-/usr/share/clear/optimized-elf/other*
-
 %files license
 %defattr(0644,root,root,0755)
 /usr/share/package-licenses/pypi-reportlab/638e7067709f6721a407b256bd4ed84cb1737106
@@ -151,4 +122,5 @@ popd
 
 %files python3
 %defattr(-,root,root,-)
+/V3/usr/lib/python3*/*
 /usr/lib/python3*/*
