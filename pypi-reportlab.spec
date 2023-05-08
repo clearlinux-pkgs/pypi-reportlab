@@ -5,7 +5,7 @@
 #
 Name     : pypi-reportlab
 Version  : 4.0.0
-Release  : 96
+Release  : 97
 URL      : https://files.pythonhosted.org/packages/af/cc/032b5069fd7ebec7dbb33a36d0041b8b283981c649f57eaea9a2b7481f12/reportlab-4.0.0.tar.gz
 Source0  : https://files.pythonhosted.org/packages/af/cc/032b5069fd7ebec7dbb33a36d0041b8b283981c649f57eaea9a2b7481f12/reportlab-4.0.0.tar.gz
 Summary  : The Reportlab Toolkit
@@ -68,7 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683301151
+export SOURCE_DATE_EPOCH=1683557780
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -78,6 +78,8 @@ export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -
 export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
+pypi-dep-fix.py . freetype-py
+pypi-dep-fix.py . rlPyCairo
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
 export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
@@ -85,6 +87,8 @@ export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3 "
 export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3 "
 export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3 "
+pypi-dep-fix.py . freetype-py
+pypi-dep-fix.py . rlPyCairo
 python3 -m build --wheel --skip-dependency-check --no-isolation
 
 popd
@@ -96,6 +100,8 @@ mkdir -p %{buildroot}/usr/share/package-licenses/pypi-reportlab
 cp %{_builddir}/reportlab-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-reportlab/638e7067709f6721a407b256bd4ed84cb1737106 || :
 cp %{_builddir}/reportlab-%{version}/src/reportlab/fonts/bitstream-vera-license.txt %{buildroot}/usr/share/package-licenses/pypi-reportlab/b3245f6ac784e19a10843831b45b5944c62e3ccc || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
+pypi-dep-fix.py %{buildroot} freetype-py
+pypi-dep-fix.py %{buildroot} rlPyCairo
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
 echo ----[ mark ]----
