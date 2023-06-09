@@ -5,7 +5,7 @@
 #
 Name     : pypi-reportlab
 Version  : 4.0.4
-Release  : 99
+Release  : 100
 URL      : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
 Summary  : The Reportlab Toolkit
@@ -52,7 +52,9 @@ Summary: python3 components for the pypi-reportlab package.
 Group: Default
 Requires: python3-core
 Provides: pypi(reportlab)
+Requires: pypi(freetype_py)
 Requires: pypi(pillow)
+Requires: pypi(rlpycairo)
 
 %description python3
 python3 components for the pypi-reportlab package.
@@ -70,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686330213
+export SOURCE_DATE_EPOCH=1686330323
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
