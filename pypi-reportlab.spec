@@ -5,7 +5,7 @@
 #
 Name     : pypi-reportlab
 Version  : 4.0.4
-Release  : 98
+Release  : 99
 URL      : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
 Source0  : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
 Summary  : The Reportlab Toolkit
@@ -14,8 +14,12 @@ License  : BSD-3-Clause OFL-1.0
 Requires: pypi-reportlab-license = %{version}-%{release}
 Requires: pypi-reportlab-python = %{version}-%{release}
 Requires: pypi-reportlab-python3 = %{version}-%{release}
+Requires: pypi(freetype_py)
+Requires: pypi(rlpycairo)
 BuildRequires : buildreq-distutils3
 BuildRequires : freetype-dev
+BuildRequires : pypi(freetype_py)
+BuildRequires : pypi(rlpycairo)
 BuildRequires : pypi(setuptools)
 BuildRequires : pypi(wheel)
 # Suppress stripping binaries
@@ -66,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686328039
+export SOURCE_DATE_EPOCH=1686330213
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
