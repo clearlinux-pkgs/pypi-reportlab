@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-reportlab
-Version  : 4.0.0
-Release  : 97
-URL      : https://files.pythonhosted.org/packages/af/cc/032b5069fd7ebec7dbb33a36d0041b8b283981c649f57eaea9a2b7481f12/reportlab-4.0.0.tar.gz
-Source0  : https://files.pythonhosted.org/packages/af/cc/032b5069fd7ebec7dbb33a36d0041b8b283981c649f57eaea9a2b7481f12/reportlab-4.0.0.tar.gz
+Version  : 4.0.4
+Release  : 98
+URL      : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
 Summary  : The Reportlab Toolkit
 Group    : Development/Tools
 License  : BSD-3-Clause OFL-1.0
@@ -48,19 +48,17 @@ Summary: python3 components for the pypi-reportlab package.
 Group: Default
 Requires: python3-core
 Provides: pypi(reportlab)
-Requires: pypi(freetype_py)
 Requires: pypi(pillow)
-Requires: pypi(rlpycairo)
 
 %description python3
 python3 components for the pypi-reportlab package.
 
 
 %prep
-%setup -q -n reportlab-4.0.0
-cd %{_builddir}/reportlab-4.0.0
+%setup -q -n reportlab-4.0.4
+cd %{_builddir}/reportlab-4.0.4
 pushd ..
-cp -a reportlab-4.0.0 buildavx2
+cp -a reportlab-4.0.4 buildavx2
 popd
 
 %build
@@ -68,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1683557780
+export SOURCE_DATE_EPOCH=1686328039
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
