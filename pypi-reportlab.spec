@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-reportlab
-Version  : 4.0.4
-Release  : 100
-URL      : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
+Version  : 4.0.5
+Release  : 101
+URL      : https://files.pythonhosted.org/packages/10/ec/4a423a97e53399c05889cd12f789ab9175f2498c77b47cc006b6482b71c1/reportlab-4.0.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/10/ec/4a423a97e53399c05889cd12f789ab9175f2498c77b47cc006b6482b71c1/reportlab-4.0.5.tar.gz
 Summary  : The Reportlab Toolkit
 Group    : Development/Tools
 License  : BSD-3-Clause OFL-1.0
@@ -61,10 +61,10 @@ python3 components for the pypi-reportlab package.
 
 
 %prep
-%setup -q -n reportlab-4.0.4
-cd %{_builddir}/reportlab-4.0.4
+%setup -q -n reportlab-4.0.5
+cd %{_builddir}/reportlab-4.0.5
 pushd ..
-cp -a reportlab-4.0.4 buildavx2
+cp -a reportlab-4.0.5 buildavx2
 popd
 
 %build
@@ -72,7 +72,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1686330323
+export SOURCE_DATE_EPOCH=1695743160
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -103,6 +103,7 @@ rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/pypi-reportlab
 cp %{_builddir}/reportlab-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/pypi-reportlab/638e7067709f6721a407b256bd4ed84cb1737106 || :
 cp %{_builddir}/reportlab-%{version}/src/reportlab/fonts/bitstream-vera-license.txt %{buildroot}/usr/share/package-licenses/pypi-reportlab/b3245f6ac784e19a10843831b45b5944c62e3ccc || :
+cp %{_builddir}/reportlab-%{version}/src/reportlab/license.txt %{buildroot}/usr/share/package-licenses/pypi-reportlab/638e7067709f6721a407b256bd4ed84cb1737106 || :
 pip install --root=%{buildroot} --no-deps --ignore-installed dist/*.whl
 pypi-dep-fix.py %{buildroot} freetype-py
 pypi-dep-fix.py %{buildroot} rlPyCairo

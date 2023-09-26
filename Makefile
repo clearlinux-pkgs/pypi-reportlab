@@ -1,5 +1,5 @@
 PKG_NAME := pypi-reportlab
-URL = https://files.pythonhosted.org/packages/67/5f/096c281d19b10b68f6bbf3f1b773c8f83aa94c4aa2e0c8f07e9921fb2cdb/reportlab-4.0.4.tar.gz
+URL = https://files.pythonhosted.org/packages/10/ec/4a423a97e53399c05889cd12f789ab9175f2498c77b47cc006b6482b71c1/reportlab-4.0.5.tar.gz
 ARCHIVES = 
 
 include ../common/Makefile.common
