@@ -7,7 +7,7 @@
 #
 Name     : pypi-reportlab
 Version  : 4.0.8
-Release  : 105
+Release  : 106
 URL      : https://files.pythonhosted.org/packages/c1/5a/782cadd45b61278df393bfb31069dff647fe3102bf70fd7cb43922a74d28/reportlab-4.0.8.tar.gz
 Source0  : https://files.pythonhosted.org/packages/c1/5a/782cadd45b61278df393bfb31069dff647fe3102bf70fd7cb43922a74d28/reportlab-4.0.8.tar.gz
 Summary  : The Reportlab Toolkit
