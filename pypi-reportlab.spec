@@ -6,10 +6,10 @@
 # autospec commit: f35655a
 #
 Name     : pypi-reportlab
-Version  : 4.2.4
-Release  : 111
-URL      : https://files.pythonhosted.org/packages/0a/6c/6e94d3d89f1319ee34a059212d8e595334517b609839a3e0353b92bcf980/reportlab-4.2.4.tar.gz
-Source0  : https://files.pythonhosted.org/packages/0a/6c/6e94d3d89f1319ee34a059212d8e595334517b609839a3e0353b92bcf980/reportlab-4.2.4.tar.gz
+Version  : 4.2.5
+Release  : 112
+URL      : https://files.pythonhosted.org/packages/c2/4c/ac8c34dc022fd4f542bc86d266b0bf83ce079917875d16ab52b95c588a34/reportlab-4.2.5.tar.gz
+Source0  : https://files.pythonhosted.org/packages/c2/4c/ac8c34dc022fd4f542bc86d266b0bf83ce079917875d16ab52b95c588a34/reportlab-4.2.5.tar.gz
 Summary  : The Reportlab Toolkit
 Group    : Development/Tools
 License  : BSD-3-Clause OFL-1.0
@@ -67,13 +67,13 @@ python3 components for the pypi-reportlab package.
 
 
 %prep
-%setup -q -n reportlab-4.2.4
-cd %{_builddir}/reportlab-4.2.4
+%setup -q -n reportlab-4.2.5
+cd %{_builddir}/reportlab-4.2.5
 pushd ..
-cp -a reportlab-4.2.4 buildavx2
+cp -a reportlab-4.2.5 buildavx2
 popd
 pushd ..
-cp -a reportlab-4.2.4 buildapx
+cp -a reportlab-4.2.5 buildapx
 popd
 
 %build
@@ -81,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1727433577
+export SOURCE_DATE_EPOCH=1727902592
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
